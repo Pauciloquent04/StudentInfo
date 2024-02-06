@@ -1,0 +1,89 @@
+﻿<UserControl x:Class="StudentInfo.Views.ViewPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:StudentInfo.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Grid.IsSharedSizeScope="True">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Student Details" FontSize="24" Grid.Row="0" />
+
+        <Grid Grid.Row="1" Margin="0 25 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" SharedSizeGroup="FirstColumn"/>
+                <ColumnDefinition Width="auto" SharedSizeGroup="SecondColumn"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="Name" Grid.Column="0"/>
+            <TextBox Text="{Binding Name}" Grid.Column="1" Width="120" Margin="10 0 0 0"/>
+
+        </Grid>
+
+        <Grid Grid.Row="2" Margin="0 25 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" SharedSizeGroup="FirstColumn"/>
+                <ColumnDefinition Width="auto" SharedSizeGroup="SecondColumn"/>
+            </Grid.ColumnDefinitions>
+            
+            <TextBlock Text="Education" Grid.Column="0"/>
+            <ComboBox Width="120" Margin="10 0 0 0" Grid.Column="1">
+                <ComboBoxItem>
+                    <TextBlock Text="SSC"/>
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    <TextBlock Text="HSC"/>
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    <TextBlock Text="Bachelors"/>
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    <TextBlock Text="Masters"/>
+                </ComboBoxItem>
+            </ComboBox>
+        </Grid>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="3" Margin="0 25 0 0">
+
+            <TextBlock Text="Gender"/>
+            <RadioButton GroupName="gender" Content="M" Margin="22 0 0 0"/>
+            <RadioButton GroupName="gender" Content="F" Margin="10 0 0 0"/>
+            <RadioButton GroupName="gender" Content="Others" Margin="10 0 0 0"/>
+        </StackPanel>
+
+        <Grid Grid.Row="4" Margin="0 25 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" SharedSizeGroup="FirstColumn"/>
+                <ColumnDefinition Width="auto" SharedSizeGroup="SecondColumn"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="City" Grid.Column="0"/>
+            <ComboBox Width="120" Margin="10 0 0 0" Grid.Column="1">
+                <ComboBoxItem>
+                    <TextBlock Text="Vadodara"/>
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    <TextBlock Text="Ahmedabad"/>
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    <TextBlock Text="Surat"/>
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    <TextBlock Text="Rajkot"/>
+                </ComboBoxItem>
+            </ComboBox>
+        </Grid>
+
+        <Button Grid.Row="5" Width="60" Margin="0 30 0 0" Content="Submit" />
+
+    </Grid>
+</UserControl>
