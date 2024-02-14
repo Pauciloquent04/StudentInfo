@@ -7,32 +7,21 @@ using System.Threading.Tasks;
 
 namespace StudentInfo.Models
 {
-    public class Student : INotifyPropertyChanged
+    public class Student
     {
-        private string _name;
-        
-        public string Name
-        {
-            get
-            {
-                return _name;
-            }
-            set
-            {
-                _name = value;
-                OnPropertyChanged("Name");
-            }
-        }
-        
-        public event PropertyChangedEventHandler PropertyChanged;
+        public string Name { get; set; }
+        public int Id { get; set; }
 
-        private void OnPropertyChanged(string propertyName)
+        public string City { get; set; }
+        public string Gender { get; set; }
+
+        public string Education { get; set; }
+
+        public Student()
         {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            
         }
+
 
     }
 }

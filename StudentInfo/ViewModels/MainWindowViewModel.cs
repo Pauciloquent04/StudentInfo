@@ -8,18 +8,9 @@ using System.Threading.Tasks;
 
 namespace StudentInfo.ViewModels
 {
-    public class MainWindowViewModel : INotifyPropertyChanged
+    public class MainWindowViewModel : BaseViewModel
     {
-        private Student _model;
         private string _name;
-
-        public MainWindowViewModel()
-        {
-            _model = new Student()
-            {
-                Name = "Rishi Arora"
-            };
-        }
 
         public string Name
         {
@@ -30,15 +21,10 @@ namespace StudentInfo.ViewModels
                 OnPropertyChange("Name");
             }
         }
-
-        private void OnPropertyChange(string propertyName)
+        public MainWindowViewModel()
         {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName)); 
-            }
+            Name = "Rishi Arora";
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
     }
 }
